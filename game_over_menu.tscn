@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c3q8xluse0rsl"]
+
+[ext_resource type="FontFile" uid="uid://bisiljym04har" path="res://MaldiniBold.ttf" id="1_14ib6"]
+[ext_resource type="Script" uid="uid://c1p0oxppnpv0h" path="res://game_over_menu.gd" id="1_prwox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prwox"]
+bg_color = Color(0.14989313, 0.478451, 0.60773784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp3el"]
+bg_color = Color(0.33333334, 0.75686276, 0.38039216, 1)
+
+[node name="GameOverMenu" type="CanvasLayer" unique_id=538880824]
+script = ExtResource("1_prwox")
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=1235775700]
+custom_minimum_size = Vector2(500, 300)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.0
+offset_top = 316.0
+offset_right = 251.0
+offset_bottom = 616.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_prwox")
+
+[node name="RestartLabel" type="Label" parent="." unique_id=446325195]
+custom_minimum_size = Vector2(400, 80)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -703.0
+offset_top = -179.0
+offset_right = -303.0
+offset_bottom = -99.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_14ib6")
+theme_override_font_sizes/font_size = 41
+text = "          Game Over!"
+
+[node name="RestartButton" type="Button" parent="." unique_id=1974253468]
+custom_minimum_size = Vector2(300, 130)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 446.0
+offset_right = 150.0
+offset_bottom = 576.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_14ib6")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_wp3el")
+text = "Play again"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
